@@ -31,10 +31,10 @@ $(document).ready(function () {
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShipAddress)
+            Ship Details
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShipName)
+            @Html.DisplayNameFor(model => model.CustomerID)
         </th>
     </tr>
 
@@ -45,14 +45,17 @@ $(document).ready(function () {
             @Ajax.ActionLink(item.OrderID.ToString(), "Details", new { id = item.EmployeeID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "partial" })
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
+            @Html.DisplayFor(modelItem => item.OrderDate).ToString().AsDateTime().ToShortDateString()
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShipAddress)
+            @Html.DisplayFor(modelItem => item.ShipName)
+            @Html.DisplayFor(modelItem => item.ShipCountry)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ShipName)
+            @Html.DisplayFor(modelItem => item.CustomerID)
         </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) 
             @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
