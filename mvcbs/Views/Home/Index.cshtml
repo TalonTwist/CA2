@@ -31,11 +31,18 @@ $(document).ready(function () {
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
+            Freight
+        </th>
+        <th>
             Ship Details
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CustomerID)
         </th>
+        <th>
+            Customer Name
+        </th>
+        
     </tr>
 
     
@@ -48,12 +55,18 @@ $(document).ready(function () {
             @Html.DisplayFor(modelItem => item.OrderDate).ToString().AsDateTime().ToShortDateString()
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ShipAddress)
-            @Html.DisplayFor(modelItem => item.ShipName)
+            @Html.DisplayFor(modelItem => item.Freight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipName)<br />
+            @Html.DisplayFor(modelItem => item.ShipAddress),
             @Html.DisplayFor(modelItem => item.ShipCountry)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.ContactName)
         </td>
         
         <td>

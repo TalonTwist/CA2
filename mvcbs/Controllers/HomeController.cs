@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 
 namespace mvcbs_music
 {
     public class HomeController : Controller
     {
-        private NorthwindEntities nwdb = new NorthwindEntities();
+        private NorthwindEntities2 nwdb = new NorthwindEntities2();
+        
    
         protected override void Dispose(bool disposing)
         {
@@ -22,7 +24,7 @@ namespace mvcbs_music
 
         public ActionResult Index(string searchTerm)
         {
-            var allArtists = nwdb.Orders;
+            var allArtists = nwdb.Orders.Include(i => i.Customer);
             return View(allArtists);
         }
 
@@ -102,7 +104,9 @@ namespace mvcbs_music
 
         public ActionResult Delete(int id)
         {
-            return View();
+            Order order = nwdb.Orders.Find(id);
+
+            return View(order);
         }
 
         //
