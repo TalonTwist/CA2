@@ -280,6 +280,7 @@
     <Content Include="Views\Album\Index.cshtml" />
     <Content Include="Views\Album\ArtistNAlbums.cshtml" />
     <Content Include="Views\Album\_Albums.cshtml" />
+    <Content Include="Views\Home\ListOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
