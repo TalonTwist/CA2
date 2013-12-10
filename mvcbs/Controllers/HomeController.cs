@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using System.ComponentModel.DataAnnotations;
 
 namespace mvcbs_music
 {
     public class HomeController : Controller
-    {private NorthwindEntities nwdb = new NorthwindEntities();
-
+    {
+        private NorthwindEntities nwdb = new NorthwindEntities();
+   
         protected override void Dispose(bool disposing)
         {
             nwdb.Dispose();
@@ -26,9 +29,20 @@ namespace mvcbs_music
         //
         // GET: /Home/Albums/5
         
-        public ActionResult Details(int id)
+        public PartialViewResult Details(int id = 1)
         {
-            return View();
+            Employee employee = nwdb.Employees.Find(id);
+            return PartialView("Employee", employee);
+        }
+
+        public ActionResult Employee_orders(int id = 1)
+        {
+            var orders = nwdb.Orders.Where(o => o.EmployeeID == id || id == 1);
+
+            int pageSize = 10;
+            int pageNumber = 1;
+
+            return View(orders.ToPagedList(pageSize, pageNumber));
         }
 
         //
