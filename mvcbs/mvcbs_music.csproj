@@ -134,7 +134,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>nwdb.tt</DependentUpon>
@@ -280,9 +279,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Album\Index.cshtml" />
-    <Content Include="Views\Album\ArtistNAlbums.cshtml" />
-    <Content Include="Views\Album\_Albums.cshtml" />
     <Content Include="Views\Home\ListOrders.cshtml" />
     <Content Include="Views\Home\Employee.cshtml" />
   </ItemGroup>
