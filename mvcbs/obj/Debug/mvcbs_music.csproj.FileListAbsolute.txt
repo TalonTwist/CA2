@@ -34,3 +34,5 @@ C:\Users\jj\Desktop\CA2\mvcbs\bin\System.Web.WebPages.Deployment.xml
 C:\Users\jj\Desktop\CA2\mvcbs\bin\System.Web.WebPages.Razor.xml
 C:\Users\jj\Desktop\CA2\mvcbs\obj\Debug\mvcbs_music.dll
 C:\Users\jj\Desktop\CA2\mvcbs\obj\Debug\mvcbs_music.pdb
+C:\Users\jj\Desktop\CA2\mvcbs\bin\PagedList.Mvc.dll
+C:\Users\jj\Desktop\CA2\mvcbs\bin\PagedList.Mvc.xml

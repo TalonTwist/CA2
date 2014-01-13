@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using PagedList.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
@@ -23,10 +24,13 @@ namespace mvcbs_music
         //
         // GET: /Home/
 
-        public ActionResult Index(string searchTerm)
+        public ActionResult Index(int? page)
         {
             var allProducts = Nw.Products;
-            return View(allProducts);
+            int pageNumber = (page ?? 1);
+            int pageSize = 14;
+            ViewBag.OnePageofProducts = allProducts.OrderBy(p => p.ProductName).ToPagedList(pageNumber, pageSize);
+            return View(ViewBag.OnePageofProducts);
         }
 
         //
