@@ -135,29 +135,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Customer.cs">
-      <DependentUpon>Northdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>Northdb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Northdb.Context.cs">
+    <Compile Include="Nw.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Northdb.Context.tt</DependentUpon>
+      <DependentUpon>Nw.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Northdb.cs">
+    <Compile Include="Nw.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Northdb.tt</DependentUpon>
+      <DependentUpon>Nw.tt</DependentUpon>
     </Compile>
-    <Compile Include="Northdb.Designer.cs">
+    <Compile Include="Nw.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Northdb.edmx</DependentUpon>
+      <DependentUpon>Nw.edmx</DependentUpon>
     </Compile>
     <Compile Include="nwdb.Context.cs">
       <AutoGen>True</AutoGen>
@@ -175,17 +169,24 @@
       <DependentUpon>nwdb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>Northdb.tt</DependentUpon>
+      <DependentUpon>Nw.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_Detail.cs">
-      <DependentUpon>Northdb.tt</DependentUpon>
+      <DependentUpon>Nw.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Nw.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shipper.cs">
-      <DependentUpon>Northdb.tt</DependentUpon>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>Nw.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\northwnd.mdf" />
+    <Content Include="App_Data\northwnd_log.ldf">
+      <DependentUpon>northwnd.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
@@ -266,22 +267,22 @@
       <DependentUpon>nwdb.edmx</DependentUpon>
       <LastGenOutput>nwdb.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Northdb.edmx">
+    <EntityDeploy Include="Nw.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Northdb.Designer.cs</LastGenOutput>
+      <LastGenOutput>Nw.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Northdb.Context.tt">
+    <Content Include="Nw.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Northdb.edmx</DependentUpon>
-      <LastGenOutput>Northdb.Context.cs</LastGenOutput>
+      <DependentUpon>Nw.edmx</DependentUpon>
+      <LastGenOutput>Nw.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Northdb.edmx.diagram">
-      <DependentUpon>Northdb.edmx</DependentUpon>
+    <Content Include="Nw.edmx.diagram">
+      <DependentUpon>Nw.edmx</DependentUpon>
     </Content>
-    <Content Include="Northdb.tt">
+    <Content Include="Nw.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Northdb.edmx</DependentUpon>
-      <LastGenOutput>Northdb.cs</LastGenOutput>
+      <DependentUpon>Nw.edmx</DependentUpon>
+      <LastGenOutput>Nw.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -317,10 +318,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ListOrders.cshtml" />
-    <Content Include="Views\Home\Employee.cshtml" />
+    <Content Include="Views\Home\Orders.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

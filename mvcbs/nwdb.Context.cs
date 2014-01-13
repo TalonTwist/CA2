@@ -25,9 +25,9 @@ namespace mvcbs_music
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Employee> Employees { get; set; }
+        //public DbSet<Employee> Employees { get; set; }
         public DbSet<Order_Detail> Order_Details { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Shipper> Shippers { get; set; }
+        //public DbSet<Shipper> Shippers { get; set; }
     }
 }

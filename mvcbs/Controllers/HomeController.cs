@@ -11,12 +11,13 @@ namespace mvcbs_music
 {
     public class HomeController : Controller
     {
-        private NorthwindEntities2 nwdb = new NorthwindEntities2();
+        //private NorthwindEntities2 nwdb = new NorthwindEntities2();
+        private NwEntities Nw = new NwEntities();
         
    
         protected override void Dispose(bool disposing)
         {
-            nwdb.Dispose();
+            Nw.Dispose();
         }
 
         //
@@ -24,8 +25,8 @@ namespace mvcbs_music
 
         public ActionResult Index(string searchTerm)
         {
-            var allArtists = nwdb.Orders.Include(i => i.Customer);
-            return View(allArtists);
+            var allProducts = Nw.Products;
+            return View(allProducts);
         }
 
         //
@@ -33,20 +34,11 @@ namespace mvcbs_music
         
         public PartialViewResult Details(int id = 1)
         {
-            Employee employee = nwdb.Employees.Find(id);
-            return PartialView("Employee", employee);
+            Order order = Nw.Orders.Find(id);
+            return PartialView("Orders", order);
         }
 
-        public ActionResult Employee_orders(int id = 1)
-        {
-            var orders = nwdb.Orders.Where(o => o.EmployeeID == id || id == 1);
-
-            int pageSize = 10;
-            int pageNumber = 1;
-
-            return View(orders.ToPagedList(pageSize, pageNumber));
-        }
-
+        
         //
         // GET: /Home/Create
 
@@ -104,9 +96,9 @@ namespace mvcbs_music
 
         public ActionResult Delete(int id)
         {
-            Order order = nwdb.Orders.Find(id);
+            Product product = Nw.Products.Find(id);
 
-            return View(order);
+            return View(product);
         }
 
         //
