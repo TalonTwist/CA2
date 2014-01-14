@@ -10,11 +10,29 @@
 <!-- import the included stylesheet for some (very basic) default styling -->
 <link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<style type="text/css">
+    .ui-tooltip {
+        font-size: small;
+        font-family: Arial;
+    }
+</style>
+
+
 @section featured {
     <h1>@ViewBag.Title.</h1>
     <h2>@ViewBag.Message</h2>
 }
 
+<script>
+    $(document).ready(function () {
+        $(document).tooltip({
+            track: true
+        });
+    });
+</script>
 
 <div id="partial">
 <table class="table table-striped table-hover">
@@ -25,7 +43,7 @@
         <th>
             Product ID
         </th>
-        <th>
+        <th >
             Unit Price
         </th>
         <th>
@@ -43,7 +61,7 @@
     
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td title = "Supplier: @item.Supplier.CompanyName">
            @Ajax.ActionLink(item.ProductName.ToString(), "Details", new { id = item.ProductID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "partial" })
         </td>
         <td>
@@ -71,6 +89,10 @@
     @Html.PagedListPager( (IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page }) )
 </table>
     
+</div>
+
+<div id="Orders">
+
 </div>
 
 

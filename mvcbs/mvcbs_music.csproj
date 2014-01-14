@@ -323,6 +323,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ListOrders.cshtml" />
     <Content Include="Views\Home\Orders.cshtml" />
+    <Content Include="Views\Home\ToolTip.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

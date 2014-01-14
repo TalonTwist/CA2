@@ -42,6 +42,10 @@ namespace mvcbs_music
             return PartialView("Orders", order);
         }
 
+        public ActionResult ToolTip()
+        {
+            return View();
+        }
         
         //
         // GET: /Home/Create
